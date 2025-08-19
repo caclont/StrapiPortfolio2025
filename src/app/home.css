@@ -5,11 +5,15 @@
   left: 0px;
   width: 100dvw;
   height: 100dvh;
-  background-color: black;
+  background-color: red;
   background-image: url("./assets/UnderMaintenance0.png");
   background-repeat: no-repeat;
   background-position: center;
   z-index: 100000;
+
+  
+  /* pointer-events: none; */
+  /* opacity: 0; */
 }
 .home-container {
     position: fixed;

@@ -1,8 +1,8 @@
 // src/utils/fetchProjects.js
 import axios from "axios";
 
-const API_BASE = "https://phenomenal-boat-7e7ba709d3.strapiapp.com";
-
+// const API_BASE = "https://phenomenal-boat-7e7ba709d3.strapiapp.com";
+const API_BASE = "https://passionate-basketball-dd3892aea3.strapiapp.com";
 // Transforme une URL Strapi potentiellement relative en URL absolue
 const toAbsoluteUrl = (u) => {
   if (!u) return null;
