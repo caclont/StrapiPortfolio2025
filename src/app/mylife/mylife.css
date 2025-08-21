@@ -70,6 +70,7 @@
   font-weight: bold;
   text-transform: uppercase;
   line-height: 1em;
+  padding-right: 1rem;
   font-size: max(min(2vw, 1.7rem), 1.4rem);
   text-align: left;
   padding-bottom: 0.5rem;

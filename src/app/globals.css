@@ -15,6 +15,11 @@
 :focus {
   outline: none;
 }
+/* iframe{
+  pointer-events: none;
+} */
+
+
 html{
   /* filter: invert(1) hue-rotate(120deg); */
 }

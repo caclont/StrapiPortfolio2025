@@ -1,10 +1,12 @@
-// src/app/projects/[slug]/page.js
+"use client";
 
+import { useEffect, useState } from "react";
+import { useParams, useRouter } from "next/navigation";
 import { fetchProjects } from "../../../utils/fetchProjects";
 import "./projectSlug.css";
 import "./gridVariant.css";
 import Lightbox from "../../../utils/lightbox";
-import EscapeRedirect from "../../../utils/EscapeRedirect"; // 🔹 Composant client
+import EscapeRedirect from "../../../utils/EscapeRedirect";
 
 const gridVariantsByCount = {
   1: ["grid-1-variant-1", "grid-1-variant-2", "grid-1-variant-3"],
@@ -19,96 +21,124 @@ const gridVariantsByCount = {
   10: ["grid-10-variant-1", "grid-10-variant-2", "grid-10-variant-3"],
 };
 
-export default async function ProjectPage({ params }) {
-  const projets = await fetchProjects();
-  const projet = projets.find((p) => p.Slug === params.slug);
+export default function ProjectPage() {
+  const params = useParams();
+  const router = useRouter();
+  const [projet, setProjet] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadProjet() {
+      const projets = await fetchProjects();
+      const found = projets.find((p) => p.slug === params.slug);
+      setProjet(found || null);
+      setLoading(false);
+    }
+    loadProjet();
+  }, [params.slug]);
+  
+  if (loading) return <div className="loader"></div>;
+  if (!projet) return <p>Projet introuvable</p>;
+  console.log("projets");
+
+  const mediaItems = [...(projet.images || []), ...(projet.videos || [])];
   const maxMedia = 10;
-
-  if (!projet) {
-    return <p>Projet introuvable</p>;
-  }
-
-  const mediaItems = projet.Media || [];
   const limitedMedia = mediaItems.slice(0, maxMedia);
   const mediaCount = limitedMedia.length;
-
   const variantsForCount = gridVariantsByCount[mediaCount] || [];
   const gridClass = variantsForCount.length
     ? variantsForCount[Math.floor(Math.random() * variantsForCount.length)]
     : "";
 
+  // Retour à la page projets
+  const handleBack = () => {
+    const scrollY = sessionStorage.getItem("projectsScroll") || 0;
+    router.push("/projects", { scroll: parseInt(scrollY, 10) });
+  };
+
   return (
     <main className="project-slug-container">
-      {/* 🔹 Ajout du listener Escape */}
       <EscapeRedirect to="/projects" />
+      {/* 🔹 Bouton retour */}
+      <button
+        className="back-button"
+        onClick={handleBack}
+        style={{ marginBottom: "1rem" }}
+      >
+        ←
+      </button>
 
-      <div className="graphiqueProjectSlug" style={{ transform: `rotate(0deg)` }}></div>
 
-      {/* Colonne gauche */}
+      <div className="graphiqueProjectSlug"></div>
+
       <div className="project-slug-text">
-        <h1 className="project-slug-title">{projet.Titre}</h1>
+        <h1 className="project-slug-title">{projet.titre}</h1>
 
         <div className="project-slug-category-container">
-          {projet.Categorie &&
-            projet.Categorie.split(" - ").map((cat, index) => (
-              <p key={index} className="project-slug-category">
-                {cat.trim()}
-              </p>
-            ))}
+          {projet.categories?.map((cat, idx) => (
+            <p key={idx} className="project-slug-category">{cat}</p>
+          ))}
         </div>
 
         <p className="project-slug-description">
-          {projet.Explication || "Pas d’explication disponible."}
+          {projet.explication || "Pas d’explication disponible."}
         </p>
 
         <div className="project-slug-bottom-meta">
-          {projet.Collaboration && (
-            <p className="project-slug-collaboration">{projet.Collaboration}</p>
-          )}
-          <span className="project-slug-year">→ {projet.Annee}</span>
+          {projet.collaboration && <p>{projet.collaboration}</p>}
+          <span>→ {projet.annees?.[0] || "?"}</span>
         </div>
       </div>
 
-      {/* Colonne droite avec GRID dynamique */}
-      <div className={`project-slug-images ${gridClass}`}>
-        {limitedMedia.length > 0 ? (
-          limitedMedia.map((media, index) => {
-            const randomZIndex = Math.random() < 0.5 ? 9 : 11;
+      <div className="project-slug-media">
+        <div className={`project-slug-images ${gridClass}`}>
+          {limitedMedia.length > 0 ? (
+            limitedMedia.map((media, index) => {
+              const randomZIndex = Math.random() < 0.5 ? 9 : 11;
 
-            if (media.type === "image") {
-              return (
-                <img
-                  key={index}
-                  src={media.url}
-                  alt={`Média ${index + 1}`}
-                  className="clickable-img"
-                  style={{ position: "relative", zIndex: randomZIndex }}
-                />
-              );
-            }
+              if (media.type === "image") {
+                return (
+                  <img
+                    key={index}
+                    src={media.url}
+                    alt={media.alt || `Média ${index + 1}`}
+                    className="clickable-img"
+                    style={{ position: "relative", zIndex: randomZIndex }}
+                  />
+                );
+              }
 
-            if (media.type === "video") {
-              return (
-                <video
-                  key={index}
-                  src={media.url}
-                  muted
-                  autoPlay
-                  loop
-                  playsInline
-                  className="clickable-img"
-                  style={{ position: "relative", zIndex: randomZIndex }}
-                />
-              );
-            }
+              if (media.type === "video") {
+                const vimeoUrl = `${media.url}?autoplay=1&loop=1&muted=1&background=1`;
 
-            return null;
-          })
-        ) : (
-          <p>Aucun média</p>
-        )}
+                return (
+                  <div
+                    key={index}
+                    className="clickable-iframe-container"
+                    style={{ position: "relative", zIndex: randomZIndex }}
+                  >
+                    <iframe
+                      src={vimeoUrl}
+                      title={media.titre || `Video ${index + 1}`}
+                      allow="autoplay; fullscreen"
+                      allowFullScreen
+                      style={{
+                        pointerEvents: "none",
+                        width: "100%",
+                        height: "100%",
+                      }}
+                    />
+                  </div>
+                );
+              }
+
+              return null;
+            })
+          ) : (
+            <p>Aucun média</p>
+          )}
+        </div>
       </div>
-
       <Lightbox />
     </main>
   );

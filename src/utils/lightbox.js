@@ -15,7 +15,8 @@ export default function Lightbox() {
       overlay.className = 'lightbox-overlay';
       overlay.innerHTML = `
         <img class="lightbox-image" alt="Preview" style="display:none;" />
-        <video class="lightbox-video" controls autoPlay style="display:none; max-width:90%; max-height:90%;"></video>
+        <video class="lightbox-video" controls autoplay style="display:none; max-width:90%; max-height:90%;"></video>
+        <iframe class="lightbox-iframe" style="display:none; max-width:90%; max-height:90%;" allow="autoplay; fullscreen"></iframe>
       `;
       document.body.appendChild(overlay);
       created = true;
@@ -23,11 +24,13 @@ export default function Lightbox() {
 
     const imgElement = overlay.querySelector('.lightbox-image');
     const videoElement = overlay.querySelector('.lightbox-video');
+    const iframeElement = overlay.querySelector('.lightbox-iframe');
 
     const openImage = (src) => {
       imgElement.src = src;
       imgElement.style.display = 'block';
       videoElement.style.display = 'none';
+      iframeElement.style.display = 'none';
       videoElement.pause();
       overlay.classList.add('active');
       document.documentElement.style.overflow = 'hidden';
@@ -37,7 +40,20 @@ export default function Lightbox() {
       videoElement.src = src;
       videoElement.style.display = 'block';
       imgElement.style.display = 'none';
+      iframeElement.style.display = 'none';
       imgElement.src = '';
+      overlay.classList.add('active');
+      document.documentElement.style.overflow = 'hidden';
+    };
+
+    const openIframe = (src) => {
+      iframeElement.src = src;
+      iframeElement.style.display = 'block';
+      imgElement.style.display = 'none';
+      videoElement.style.display = 'none';
+      imgElement.src = '';
+      videoElement.pause();
+      videoElement.src = '';
       overlay.classList.add('active');
       document.documentElement.style.overflow = 'hidden';
     };
@@ -47,6 +63,7 @@ export default function Lightbox() {
       imgElement.src = '';
       videoElement.pause();
       videoElement.src = '';
+      iframeElement.src = '';
       document.documentElement.style.overflow = '';
     };
 
@@ -56,13 +73,18 @@ export default function Lightbox() {
     const onDocumentClick = (e) => {
       const target = e.target;
 
-      if (overlay.contains(target) && !target.closest('.lightbox-image') && !target.closest('.lightbox-video')) {
+      // Clic hors média
+      if (overlay.contains(target) &&
+          !target.closest('.lightbox-image') &&
+          !target.closest('.lightbox-video') &&
+          !target.closest('.lightbox-iframe')) {
         close();
         return;
       }
 
       const img = target.closest('img');
       const vid = target.closest('video');
+      const iframeContainer = target.closest('.clickable-iframe-container');
 
       if (img && isAllowedMedia(img)) {
         e.preventDefault();
@@ -75,20 +97,18 @@ export default function Lightbox() {
         const src = vid.currentSrc || vid.src || vid.dataset?.src || '';
         if (src) openVideo(src);
       }
-    };
 
-    const onKeyDown = (e) => {
-      if (e.key === 'Escape' && overlay.classList.contains('active')) {
-        close();
+      if (iframeContainer && isAllowedMedia(iframeContainer)) {
+        e.preventDefault();
+        const iframe = iframeContainer.querySelector('iframe');
+        if (iframe) openIframe(iframe.src);
       }
     };
 
     document.addEventListener('click', onDocumentClick, true);
-    document.addEventListener('keydown', onKeyDown);
 
     return () => {
       document.removeEventListener('click', onDocumentClick, true);
-      document.removeEventListener('keydown', onKeyDown);
       if (created && overlay.parentNode) overlay.remove();
     };
   }, []);

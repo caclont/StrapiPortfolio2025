@@ -22,7 +22,7 @@ export default function Cursor() {
         target.tagName === 'BUTTON' ||
         target.hasAttribute('onclick') ||
         target.closest(
-          '.project-slug-images img, .mylife-images-grid img, .project-slug-images video, .mylife-images-grid video'
+          '.project-slug-images img, .mylife-images-grid img, .project-slug-images video, .mylife-images-grid video, .clickable-iframe-container'
         )
       );
     };
@@ -33,6 +33,10 @@ export default function Cursor() {
         cursorRef.current.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
         cursorRef.current.style.borderColor = 'black';
         scaleRef.current = 1.5;
+      } else if (e.target.tagName === 'IFRAME') {
+        // curseur neutre au-dessus des iframes
+        hoveringClickable.current = false;
+        scaleRef.current = 1;
       }
     };
 
@@ -100,7 +104,7 @@ export default function Cursor() {
         backdropFilter: 'blur(1px)',
         // Transition uniquement pour couleur et scale
         transition:
-          'background-color 0.2s ease, border-color 0.2s ease, transform 0.25s ease',
+          'background-color 0.2s ease, border-color 0.2s ease, scale 0.5s ease',
       }}
     />
   );

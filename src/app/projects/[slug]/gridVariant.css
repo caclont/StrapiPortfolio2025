@@ -308,13 +308,14 @@
 .project-slug-images video:nth-child(10) { grid-area: img10; }
 
 /* Styles communs images & vidéos */
-.project-slug-images img,
-.project-slug-images video {
+.project-slug-media img,
+.project-slug-media .clickable-iframe-container {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  padding: 0.5rem;
+  /* gap: 1rem; */
+  /* padding: 0.5rem; */
 }
 
 /* Zones vides -> fond blanc */

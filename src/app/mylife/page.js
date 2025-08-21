@@ -1,32 +1,75 @@
 "use client";
 
 import { useEffect, useState, useMemo } from "react";
-import { fetchMylife } from "@/utils/fetchProjects";
+import { fetchMyLife } from "@/utils/fetchMyLife";
 import Lightbox from "@/utils/lightbox";
 import "./mylife.css";
 import "./gridVariantMyLife.css";
 
-import { M_PLUS_1p } from 'next/font/google';
+import { M_PLUS_1p } from "next/font/google";
 
 const mPlus1p = M_PLUS_1p({
-  weight: ['400', '700'],
-  subsets: ['latin'],
+  weight: ["400", "700"],
+  subsets: ["latin"],
 });
 
 const gridVariantsByCount = {
-  1: ["mylife-grid-1-variant-1", "mylife-grid-1-variant-2", "mylife-grid-1-variant-3"],
-  2: ["mylife-grid-2-variant-1", "mylife-grid-2-variant-2", "mylife-grid-2-variant-3"],
-  3: ["mylife-grid-3-variant-1", "mylife-grid-3-variant-2", "mylife-grid-3-variant-3"],
-  4: ["mylife-grid-4-variant-1", "mylife-grid-4-variant-2", "mylife-grid-4-variant-3"],
-  5: ["mylife-grid-5-variant-1", "mylife-grid-5-variant-2", "mylife-grid-5-variant-3"],
-  6: ["mylife-grid-6-variant-1", "mylife-grid-6-variant-2", "mylife-grid-6-variant-3"],
-  7: ["mylife-grid-7-variant-1", "mylife-grid-7-variant-2", "mylife-grid-7-variant-3"],
-  8: ["mylife-grid-8-variant-1", "mylife-grid-8-variant-2", "mylife-grid-8-variant-3"],
-  9: ["mylife-grid-9-variant-1", "mylife-grid-9-variant-2", "mylife-grid-9-variant-3"],
-  10: ["mylife-grid-10-variant-1", "mylife-grid-10-variant-2", "mylife-grid-10-variant-3"],
+  1: [
+    "mylife-grid-1-variant-1",
+    "mylife-grid-1-variant-2",
+    "mylife-grid-1-variant-3",
+  ],
+  2: [
+    "mylife-grid-2-variant-1",
+    "mylife-grid-2-variant-2",
+    "mylife-grid-2-variant-3",
+  ],
+  3: [
+    "mylife-grid-3-variant-1",
+    "mylife-grid-3-variant-2",
+    "mylife-grid-3-variant-3",
+  ],
+  4: [
+    "mylife-grid-4-variant-1",
+    "mylife-grid-4-variant-2",
+    "mylife-grid-4-variant-3",
+  ],
+  5: [
+    "mylife-grid-5-variant-1",
+    "mylife-grid-5-variant-2",
+    "mylife-grid-5-variant-3",
+  ],
+  6: [
+    "mylife-grid-6-variant-1",
+    "mylife-grid-6-variant-2",
+    "mylife-grid-6-variant-3",
+  ],
+  7: [
+    "mylife-grid-7-variant-1",
+    "mylife-grid-7-variant-2",
+    "mylife-grid-7-variant-3",
+  ],
+  8: [
+    "mylife-grid-8-variant-1",
+    "mylife-grid-8-variant-2",
+    "mylife-grid-8-variant-3",
+  ],
+  9: [
+    "mylife-grid-9-variant-1",
+    "mylife-grid-9-variant-2",
+    "mylife-grid-9-variant-3",
+  ],
+  10: [
+    "mylife-grid-10-variant-1",
+    "mylife-grid-10-variant-2",
+    "mylife-grid-10-variant-3",
+  ],
 };
 
-const HARDCODED_YEARS = Array.from({ length: 2025 - 2016 + 1 }, (_, i) => 2016 + i);
+const HARDCODED_YEARS = Array.from(
+  { length: 2025 - 2016 + 1 },
+  (_, i) => 2016 + i
+);
 
 export default function MylifePage() {
   const [mylifeData, setMylifeData] = useState([]);
@@ -36,24 +79,31 @@ export default function MylifePage() {
   useEffect(() => {
     (async () => {
       try {
-        const data = await fetchMylife();
+        const data = await fetchMyLife();
         setMylifeData(Array.isArray(data) ? data : []);
 
-        // Initialise année et action par défaut
         if (data.length > 0) {
-          const firstYear = data[0].annee;
-          setSelectedYear(firstYear);
-          const firstAction = data.find(e => e.annee === firstYear)?.action || null;
-          setSelectedAction(firstAction);
+          const firstEntry = data.find((e) => e.annees && e.annees.length > 0);
+          // console.log(firstEntry.annees[0])
+          if (firstEntry) {
+            const firstYear = firstEntry.annees[0];
+            console.log(firstYear);
+            setSelectedYear(firstYear);
+            const firstAction =
+              data.find((e) => e.annees.includes(firstYear))?.action || null;
+            setSelectedAction(firstAction);
+          }
         }
       } catch (e) {
-        console.error("fetchMylife error", e);
+        console.error("fetchMyLife error", e);
       }
     })();
   }, []);
 
   const entriesForYear = selectedYear
-    ? mylifeData.filter((item) => String(item.annee) === String(selectedYear))
+    ? mylifeData.filter((item) =>
+        item.annees.map((a) => Number(a)).includes(Number(selectedYear))
+      )
     : [];
 
   const actionsForYear = [...new Set(entriesForYear.map((e) => e.action))];
@@ -62,25 +112,24 @@ export default function MylifePage() {
     ? entriesForYear.find((e) => e.action === selectedAction)
     : null;
 
-  // 🔹 Limiter à 6 médias
-  const limitedMedia = useMemo(() => {
-    return actionDetails?.images?.slice(0, 6) || [];
+  const media = useMemo(() => {
+    const imgs = actionDetails?.images || [];
+    const vids = actionDetails?.videos || [];
+    return [...imgs, ...vids].slice(0, 6);
   }, [actionDetails]);
 
   const gridClass = useMemo(() => {
-    if (!limitedMedia.length) return "";
-    const count = limitedMedia.length;
+    const count = media.length;
     const variants = gridVariantsByCount[count] || [];
     return variants.length
       ? variants[Math.floor(Math.random() * variants.length)]
       : "";
-  }, [limitedMedia]);
+  }, [media]);
 
   return (
     <div className={`mylife-layout ${mPlus1p.className}`}>
       <div className="graphiqueMyLife"></div>
 
-      {/* Colonne Années */}
       <aside className="mylife-years">
         {HARDCODED_YEARS.map((year) => (
           <button
@@ -88,8 +137,11 @@ export default function MylifePage() {
             className={`year-item ${selectedYear == year ? "active" : ""}`}
             onClick={() => {
               setSelectedYear(year);
-              const firstActionForYear = mylifeData.find(e => e.annee === year)?.action || null;
-              setSelectedAction(firstActionForYear);
+              const firstAction =
+                mylifeData.find((e) =>
+                  e.annees.map((a) => Number(a)).includes(Number(year))
+                )?.action || null;
+              setSelectedAction(firstAction);
             }}
           >
             <span className="arrow">→</span> {year}
@@ -97,12 +149,13 @@ export default function MylifePage() {
         ))}
       </aside>
 
-      {/* Colonne Actions */}
       <div className="mylife-actions">
         {actionsForYear.map((action) => (
           <div
             key={`${selectedYear}-${action}`}
-            className={`action-item ${selectedAction === action ? "active" : ""}`}
+            className={`action-item ${
+              selectedAction === action ? "active" : ""
+            }`}
             onMouseEnter={() => setSelectedAction(action)}
           >
             {action}
@@ -110,14 +163,12 @@ export default function MylifePage() {
         ))}
       </div>
 
-      {/* Colonne Explication */}
       <div className="mylife-explication">
-        {actionDetails?.explication && <p>{actionDetails.explication}</p>}
+        {actionDetails?.description && <p>{actionDetails.description}</p>}
       </div>
 
-      {/* Colonne Médias */}
       <div className={`mylife-images-grid ${gridClass}`}>
-        {limitedMedia.map((media, i) => {
+        {media.map((media, i) => {
           const randomZIndex = Math.random() < 0.5 ? 9 : 11;
           const extraClass = randomZIndex === 11 ? "z11-shadow" : "";
 

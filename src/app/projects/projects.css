@@ -72,6 +72,8 @@ html, body {
   position: relative;
   font-size: max(min(3vw, 5em), 2vw);
   text-transform: uppercase;
+  letter-spacing: 5px;
+  transition: letter-spacing 0.5s ease;
 }
 
 .project-title a {
@@ -79,12 +81,16 @@ html, body {
   text-decoration: none;
   color: inherit;
 }
-
+.project-title:hover{
+  letter-spacing: 0px;
+}
 .scroll-wrapper {
   overflow: hidden;
   width: 100%;
 }
-
+.scroll-text{
+  letter-spacing: 0px;
+}
 .scroll-text:hover {
   display: inline-block;
   padding-right: 2rem;
