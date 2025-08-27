@@ -1,0 +1,287 @@
+/* === 2 IMAGES === */
+.grid-1-variant-1 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 100%;
+  grid-template-areas:
+    "img1 img1";
+}
+.grid-1-variant-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100%;
+  grid-template-areas:
+    "img1 img1";
+}
+.grid-1-variant-3 {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 100%;
+  grid-template-areas:
+    "img1 img1";
+}
+
+/* === 2 IMAGES === */
+.grid-2-variant-1 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 50dvh 30dvh;
+  grid-template-areas:
+    "img1 img2"
+    "img1 .";
+}
+.grid-2-variant-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: calc(40% - 0.5rem) calc(60% - 0.5rem);
+  grid-template-areas:
+    "img1 img1 img1"
+    ". img2 img2";
+}
+.grid-2-variant-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: calc(50% - 0.5rem) calc(50% - 0.5rem);
+  grid-template-areas:
+    "img1 img2"
+    ". .";
+}
+
+/* === 3 IMAGES === */
+.grid-3-variant-1 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: calc(40% - 0.5rem) calc(60% - 0.5rem);
+  grid-template-areas:
+    "img1 img2"
+    "img1 img3";
+}
+
+.grid-3-variant-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: calc(50% - 0.5rem) calc(50% - 0.5rem);
+  grid-template-areas:
+    "img1 img2 img3"
+    ". . img3";
+}
+
+.grid-3-variant-3 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: calc(60% - 0.5rem) calc(40% - 0.5rem);
+  grid-template-areas:
+    "img1 img2"
+    "img3 .";
+}
+
+/* ==== 4 IMAGES ==== */
+.grid-4-variant-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-rows: calc(30% - 0.5rem) calc(30% - 1rem) calc(40% - 0.5rem);
+  grid-template-areas:
+    "img1 img1 img2"
+    ". img3 img2"
+    ". img3 img4";
+}
+.grid-4-variant-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-rows: calc(35% - 0.5rem) calc(35% - 1rem) calc(30% - 0.5rem);
+  grid-template-areas:
+    "img1 img1 img2"
+    ". img3 img2"
+    ". . img4";
+}
+.grid-4-variant-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: calc(25% - 0.5rem) calc(25% - 1rem) calc(50% - 0.5rem);
+  grid-template-areas:
+    "img1 img2"
+    "img3 ."
+    "img3 img4";
+}
+/* ==== 5 IMAGES ==== */
+.grid-5-variant-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: calc(25% - 0.5rem) calc(45% - 1rem) calc(30% - 0.5rem);
+  grid-template-areas:
+    "img1 img1 img1 img2"
+    ". img3 img3 img2"
+    ". img5 img5 img4";
+}
+.grid-5-variant-2 {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  grid-template-rows: calc(25% - 0.5rem) calc(35% - 1rem) calc(40% - 0.5rem);
+  grid-template-areas:
+    "img1 img1 img2"
+    "img3 img3 img4"
+    ". img5 img4";
+}
+.grid-5-variant-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: calc(25% - 0.5rem) calc(35% - 1rem) calc(40% - 0.5rem);
+  grid-template-areas:
+    "img1 img2 img2"
+    "img3 img4 img5"
+    ". . img5";
+}
+
+/* ==== 6 IMAGES ==== */
+.grid-6-variant-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr 2fr;
+  grid-template-rows: calc(25% - 1rem) calc(25% - 1rem) calc(25% - 1rem) calc(25% - 1rem);
+  grid-template-areas:
+    "img1 img1 img2 img2"
+    "img1 img1 img3 img4"
+    "img6 img6 img3 img4"
+    "img5 img5 img5 img5";
+}
+.grid-6-variant-2 {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 1fr;
+  grid-template-rows: calc(25% - 0.5rem) calc(35% - 1rem) calc(40% - 0.5rem);
+  grid-template-areas:
+    "img1 img1 img2 img2"
+    "img3 img3 img4 ."
+    ". img5 img6 img6";
+}
+.grid-6-variant-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+  grid-template-rows: calc(35% - 0.5rem) calc(35% - 1rem) calc(30% - 0.5rem);
+  grid-template-areas:
+    "img1 img2 ."
+    "img3 img4 img5"
+    "img6 img6 img5";
+}
+
+/* ==== 7 IMAGES ==== */
+.grid-7-variant-1 {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 3fr;
+  grid-template-rows: calc(25% - 1rem) calc(25% - 1rem) calc(25% - 1rem) calc(25% - 1rem);
+  grid-template-areas:
+    "img1 img1 . img7"
+    "img1 img1 img2 img7"
+    "img4 img3 img3 img7"
+    "img5 img5 img6 img7";
+}
+.grid-7-variant-2 {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 1fr;
+  grid-template-rows: calc(35% - 0.5rem) calc(35% - 1rem) calc(30% - 0.5rem);
+  grid-template-areas:
+    "img1 img1 img1 img1"
+    "img2 img2 img3 img4"
+    "img5 img5 img6 img7";
+}
+.grid-7-variant-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+  grid-template-rows: calc(25% - 0.5rem) calc(35% - 1rem) calc(40% - 0.5rem);
+  grid-template-areas:
+    "img1 img2 img5"
+    "img3 img4 img5"
+    ". img6 img7";
+}
+
+/* ==== 8 IMAGES ==== */
+.grid-8-variant-1 {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 3fr;
+  grid-template-rows: calc(25% - 1rem) calc(25% - 1rem) calc(25% - 1rem) calc(25% - 1rem);
+  grid-template-areas:
+    "img1 img1 . img7"
+    "img1 img1 img2 img7"
+    "img4 img3 img3 img8"
+    "img5 img5 img6 img8";
+}
+.grid-8-variant-2 {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 1fr;
+  grid-template-rows: calc(20% - 1rem) calc(20% - 1rem) calc(25% - 1rem) calc(35% - 1rem);
+  grid-template-areas:
+    "img2 img1 img1 img4"
+    "img5 img3 img3 img4"
+    "img5 img6 img7 img8"
+    ". img6 img7 img8";
+}
+.grid-8-variant-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+  grid-template-rows: calc(25% - 0.5rem) calc(35% - 1rem) calc(40% - 0.5rem);
+  grid-template-areas:
+    "img1 img2 img5 img5"
+    "img3 img4 img5 img5"
+    "img6 img6 img7 img8";
+}
+
+/* ==== 9 IMAGES ==== */
+.grid-9-variant-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 2fr;
+  grid-template-rows: calc(20% - 1rem) calc(20% - 1rem) calc(25% - 1rem) calc(35% - 1rem);
+  grid-template-areas:
+    "img1 img1 . img7 img7"
+    "img1 img1 img2 img2 img2"
+    "img4 img3 img3 img8 img9"
+    "img5 img5 img6 img8 img9";
+}
+.grid-9-variant-2 {
+  display: grid;
+  grid-template-columns: 3fr 2fr 1fr 2fr 2fr;
+  grid-template-rows: calc(25% - 1rem) calc(25% - 1rem) calc(25% - 1rem) calc(25% - 1rem);
+  grid-template-areas:
+    "img1 img2 . img3 img3"
+    "img1 img4 img4 img5 img5"
+    "img6 img4 img4 img7 img7"
+    "img8 img8 img8 . img9";
+}
+.grid-9-variant-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+  grid-template-rows: calc(25% - 0.5rem) calc(35% - 1rem) calc(40% - 0.5rem);
+  grid-template-areas:
+    "img1 img2 img3"
+    "img4 img5 img6"
+    "img7 img8 img9";
+}
+/* ==== 10 IMAGES ==== */
+.grid-10-variant-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 2fr;
+  grid-template-rows: calc(25% - 1rem) calc(25% - 1rem) calc(25% - 1rem) calc(25% - 1rem);
+  grid-template-areas:
+    "img1 img1 img7 img7 img7"
+    "img1 img1 img2 img2 img2"
+    "img4 img3 img3 img8 img9"
+    "img5 img5 img6 img10 img10";
+}
+.grid-10-variant-2 {
+  display: grid;
+  grid-template-columns: 3fr 2fr 1fr 2fr 2fr;
+  grid-template-rows: calc(35% - 1rem) calc(20% - 1rem) calc(20% - 1rem) calc(25% - 1rem);
+  grid-template-areas:
+    "img1 img2 img2 img3 img3"
+    "img1 img4 img4 img5 img5"
+    "img6 img4 img4 img7 img7"
+    "img8 img8 img8 img10 img9";
+}
+.grid-10-variant-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr ;
+  grid-template-rows: calc(25% - 0.5rem) calc(35% - 1rem) calc(40% - 0.5rem);
+  grid-template-areas:
+    "img1 img2 img2 img3 img3"
+    "img4 img5 img6 img3 img3"
+    "img7 img8 img8 img9 img10";
+}
+
+

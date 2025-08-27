@@ -1,0 +1,23 @@
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 1);
+    pointer-events: none;
+    z-index: 9999;
+    transform: scale(1);
+    backdrop-filter: blur(1px);
+    transition: background-color 0.2s ease, border-color 0.2s ease, scale 0.5s ease;
+  }
+  
+  /* Disparition du curseur sur mobile (max-width: 500px) */
+  @media screen and (max-width: 500px) {
+    .cursor {
+      display: none;
+    }
+  }
+  

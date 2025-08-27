@@ -1,0 +1,133 @@
+@media screen and (min-width: 1025px) {
+
+  .projects-table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+  }
+
+  .project-row {
+    display: grid;
+    /* z-index: 8; */
+    grid-template-columns: calc(7.5dvw - 1rem) 27.5dvw 25dvw calc(40dvw - 1rem);
+    /* grid-template-rows: 10dvh; */
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.4s ease, opacity 0.4s ease, height 0.4s ease, margin 0.4s ease;
+  }
+
+  .project-row.hidden {
+    opacity: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    display: none;
+    pointer-events: none;
+  }
+
+  .project-row.visible {
+    opacity: 1;
+    display: grid;
+    height: auto;
+  }
+  .project-title{
+    /* background-color: green; */
+    z-index: 10;
+    /* height: 5dvh; */
+
+  }
+  .project-title a {
+    /* background-color: red; */
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: inherit;
+    z-index: 10;
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+    transition: all 0.2s ease;
+  }
+  .project-title a:hover {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: inherit;
+    border-bottom: 1px solid rgba(255, 255, 255, 1);
+  }
+
+  .project-category {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    z-index: 10;
+
+    /* background-color: blue; */
+  }
+
+  .project-category-button {
+    
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 200px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    z-index: 10;
+
+    transition: all 0.3s ease;
+  }
+  .projects-loader{
+    width: 100dvw;
+    position: absolute;
+    top: 50dvh;
+
+    text-align: center;
+  }
+  .project-category-button.active {
+    background-color: white;
+    color: black;
+  }
+
+  .project-category-button:hover {
+    background-color: white;
+    color: black;
+  }
+
+  .project-year {
+    white-space: nowrap;
+    color: grey;
+    /* font-weight: bold; */
+    font-size: 1.5rem;
+    z-index: 10;
+    /* background-color: brown; */
+  }
+
+  .project-description {
+    max-height: 0;
+    opacity: 0;
+    z-index: 10;
+    line-height: 1;
+    text-align: justify;
+    overflow: hidden;
+    transition: all 1s ease;
+  }
+  
+  .project-row:hover .project-description {
+    max-height: 100px; /* ou auto si tu veux */
+    opacity: 1;
+  }
+  
+  .hover-image {
+    position: fixed;
+    max-width: 400px;
+    max-height: 400px;
+    pointer-events: none;
+    z-index: 9;
+    filter: brightness(0.5);
+    box-shadow: 10px 10px 15px rgba(255,255,255,0.2);
+    transition: transform 0.1s ease;
+  }
+  projects-loader-container{
+    background-color: red;
+  }
+}

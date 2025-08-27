@@ -1,0 +1,100 @@
+@media screen and (max-width: 500px) {
+
+  .projects-table {
+    position: relative;
+    top: 10dvh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* position: relative; */
+  }
+
+  /* Cacher la description */
+  .project-description {
+    display: none !important;
+  }
+
+  /* Chaque projet en grille simple sur 3 lignes */
+  .project-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* année | reste (titre+cat) */
+    grid-template-rows: auto auto; /* 2 lignes : titre/catégorie */
+    grid-template-areas:
+      "year year"
+      "title category";
+    gap: 0.3rem;
+    align-items: center;
+    padding: 0.5rem 0.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, opacity 0.3s ease, height 0.3s ease, margin 0.3s ease;
+  }
+
+  .project-row.hidden {
+    opacity: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    display: none;
+    pointer-events: none;
+  }
+
+  .project-row.visible {
+    opacity: 1;
+    display: grid;
+    height: auto;
+  }
+
+  .project-year {
+    grid-area: year;
+    font-size: 1.2rem;
+    color: grey;
+    white-space: nowrap;
+  }
+
+  .project-title {
+    grid-area: title;
+    font-size: 1.2rem;
+    /* font-weight: bold; */
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+  }
+
+  .project-title a {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid rgba(255,255,255,0);
+    transition: all 0.2s ease;
+  }
+
+  .project-title a:hover {
+    border-bottom: 1px solid rgba(255,255,255,1);
+  }
+
+  .project-category {
+    grid-area: category;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .project-category-button {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 200px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+  }
+
+  .project-category-button.active {
+    background-color: white;
+    color: black;
+  }
+
+  .hover-image {
+    display: none;
+  }
+
+}

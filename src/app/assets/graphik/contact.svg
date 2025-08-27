@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 619.56 173.15">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-width: 3.8px;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10 {
+        fill: none;
+        stroke: #5758bb;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        stroke-width: 9.4px;
+      }
+
+      .cls-3 {
+        stroke-width: 12.2px;
+      }
+
+      .cls-4 {
+        stroke-width: 6.6px;
+      }
+
+      .cls-5 {
+        stroke-width: 9.4px;
+      }
+
+      .cls-6 {
+        stroke-width: 15px;
+      }
+
+      .cls-7 {
+        stroke-width: 3.8px;
+      }
+
+      .cls-8 {
+        stroke-width: 6.6px;
+      }
+
+      .cls-10 {
+        stroke-width: 12.2px;
+      }
+    </style>
+  </defs>
+  <g id="Calque_1-2" data-name="Calque 1">
+    <g>
+      <ellipse class="cls-9" cx="590.17" cy="86.58" rx="28.89" ry="79.08"/>
+      <ellipse class="cls-7" cx="534.09" cy="86.58" rx="38.93" ry="79.08"/>
+      <ellipse class="cls-4" cx="478.01" cy="86.58" rx="48.96" ry="79.08"/>
+      <ellipse class="cls-2" cx="421.93" cy="86.58" rx="59" ry="79.08"/>
+      <ellipse class="cls-3" cx="365.86" cy="86.58" rx="69.04" ry="79.08"/>
+      <circle class="cls-6" cx="309.78" cy="86.58" r="79.08"/>
+      <ellipse class="cls-10" cx="253.7" cy="86.58" rx="69.04" ry="79.08"/>
+      <ellipse class="cls-5" cx="197.62" cy="86.58" rx="59" ry="79.08"/>
+      <ellipse class="cls-8" cx="141.55" cy="86.58" rx="48.96" ry="79.08"/>
+      <ellipse class="cls-1" cx="85.47" cy="86.58" rx="38.93" ry="79.08"/>
+      <ellipse class="cls-9" cx="29.39" cy="86.58" rx="28.89" ry="79.08"/>
+    </g>
+  </g>
+</svg>

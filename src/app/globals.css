@@ -1,0 +1,72 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: 'HelveticaCustom';
+  src: url('/fonts/helvetica.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+.arrow{
+  font-family: 'M PLUS 1p', sans-serif;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'HelveticaCustom';
+  src: url('/fonts/helvetica.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@media screen and (max-width: 500px) {
+  *{
+    cursor: default;
+  }
+}
+@media screen and (min-width: 501px) {
+  *{
+    cursor: none;
+  }
+}
+
+:focus {
+  outline: none;
+}
+
+
+
+html{
+  /* filter: invert(1) hue-rotate(120deg); */
+  height: 100dvh;
+
+}
+@media (min-width: 2500px){
+html{
+  width: 80dvw;
+  margin: 0dvh 10dvw;
+}
+}
+body {
+  font-family: 'HelveticaCustom', sans-serif;
+  background-color: black;
+  color: white;
+  overflow-x: hidden;
+  /* backdrop-filter: invert(); */
+}
+::-webkit-scrollbar {
+  width: 10px;            
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: white;   
+  border-radius: 40px;   
+  border: 3px solid transparent; 
+  background-clip: content-box;
+}

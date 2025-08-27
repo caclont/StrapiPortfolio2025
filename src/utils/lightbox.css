@@ -1,0 +1,80 @@
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255,255,255,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+    backdrop-filter: blur(20px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-overlay img {
+  max-width: 50%;
+  max-height: 50%;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+}
+
+.lightbox-overlay.active img {
+  transform: scale(1.4);
+}
+.lightbox-overlay iframe.lightbox-iframe {
+  max-width: 90vw;
+  max-height: 90vh;
+  width: 90vw;
+  height: 90vh;
+  border: none;
+  border-radius: 8px;
+  /* box-shadow: 0 0 20px rgba(0,0,0,0.5); */
+  /* background-color: red; */
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+
+.lightbox-overlay.active iframe.lightbox-iframe {
+  transform: scale(1.0); /* on peut mettre 1.0 pour éviter le zoom exagéré */
+}
+.lightbox-close-btn {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 2rem;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+  z-index: 1002;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.lightbox-overlay.active .lightbox-close-btn {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-close-btn:hover {
+  transform: scale(1.2);
+  background: rgba(0,0,0,0.7);
+}

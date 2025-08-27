@@ -1,0 +1,115 @@
+@media screen and (min-width: 501px) and (max-width: 1024px) {
+
+  .projects-table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+  }
+  .project-description {
+    display: none !important;
+    background-color: white;
+  }
+  .project-row {
+    display: grid;
+    grid-template-columns: 4rem calc(50% - 2rem) calc(50% - 2rem); /* année | titre | catégorie */
+    /* grid-template-rows: 5dvh; */
+    grid-template-areas:
+      "years titre categorie";
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.4s ease, opacity 0.4s ease, height 0.4s ease, margin 0.4s ease;
+  }
+
+  .project-row.hidden {
+    opacity: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    display: none;
+    pointer-events: none;
+  }
+
+  .project-row.visible {
+    opacity: 1;
+    display: grid;
+    height: auto;
+  }
+  .project-title{
+    /* background-color: green; */
+    z-index: 10;
+    grid-area: titre;
+
+  }
+  .project-title a {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: inherit;
+    z-index: 10;
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+    transition: all 0.2s ease;
+  }
+  .project-title a:hover {
+    text-transform: uppercase;
+    color: inherit;
+    border-bottom: 1px solid rgba(255, 255, 255, 1);
+  }
+
+  .project-category {
+    grid-area: categorie;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    z-index: 10;
+    /* background-color: blue; */
+  }
+
+  .project-category-button {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    padding: 0rem 0.4rem;
+    border-radius: 200px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    z-index: 10;
+
+    transition: all 0.3s ease;
+  }
+
+  .project-category-button.active {
+    background-color: white;
+    color: black;
+  }
+
+  .project-category-button:hover {
+    background-color: white;
+    color: black;
+  }
+
+  .project-year {
+    color: grey;
+    grid-area: years;
+    white-space: nowrap;
+    font-size: 1.5rem;
+    z-index: 10;
+    /* background-color: brown; */
+  }
+
+
+  
+  .hover-image {
+    position: fixed;
+    max-width: 400px;
+    max-height: 400px;
+    pointer-events: none;
+    z-index: 9;
+    filter: brightness(0.5);
+    box-shadow: 10px 10px 15px rgba(255,255,255,0.2);
+    transition: transform 0.1s ease;
+  }
+  projects-loader-container{
+    background-color: red;
+  }
+}

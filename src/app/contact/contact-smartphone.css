@@ -1,0 +1,71 @@
+/* contact.css */
+
+/* ---- Version desktop ---- */
+@media screen and (max-width: 500px) {
+  /* Global container */
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    position: absolute;
+    width: 100dvw;
+    top: 10dvh;
+    color: white;
+    font-size: 1rem;
+    padding: 1rem;
+    font-family: 'HelveticaCustom', sans-serif !important;
+  }
+
+  /* Section du haut */
+  .contact-text-top {
+    width: 100%;
+  }
+
+  /* Section du bas */
+  .contact-text-bottom {
+    width: 100%;
+    margin-top: auto; /* pousse en bas */
+  }
+
+  /* Ligne sociale */
+  .contact-social {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Colonnes gauche, centre, droite */
+  .contact-social-name {
+    flex: 1;
+    text-align: left;
+  }
+
+  .contact-arrow {
+    flex: 1;
+    text-align: center;
+    font-family: 'M PLUS 1p', sans-serif;
+  }
+
+  .contact-username {
+    flex: 1;
+    text-align: right;
+  }
+
+  /* Liens */
+  .contact-link {
+    text-decoration: none;
+  }
+
+  .contact-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Vidéo / GIF */
+  .contact-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+    flex-grow: 1; /* occupe l'espace restant entre top et bottom */
+  }
+}

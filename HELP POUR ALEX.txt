@@ -1,0 +1,27 @@
+//--------Push sur Github----------//
+
+git add .
+git commit -m "Message clair de la modif"
+git push
+
+--Ne pas oublier de push le frontend (mon-portfolio) sur Github pour le mettre en ligne.
+--Si il n'est pas en ligne : ---//
+1.  Aller sur le dashboard de Vercel
+2.  Cliquer sur le projet
+3.  Redeployment (trois petits points)
+
+//--------Modifier le Content-type de strapi-Cloud-------
+Ouvrir le terminal dans repos strapi
+-> npm run developp
+-> npm run build
+Modifier ce qu'il faut Modifier
+Si nouveau content-type:
+    Supprimer le dossier routes, controllers et services dans api/nom du content-type
+    -> npm run developp
+    -> npm run build
+    -> Prier
+    -> Push
+Push sur Github :
+git add .
+git commit -m "Message clair de la modif"
+git push
