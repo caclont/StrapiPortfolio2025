@@ -100,7 +100,7 @@ export default function Projects() {
   if (loading) {
     return (
       <div className="projects-loader-container">
-        <div className="projects-loader">My CMS seems to have asthma...</div>
+        <div className="projects-loader">My CMS seems to have asthma atm...</div>
       </div>
     );
   }

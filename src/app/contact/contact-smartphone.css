@@ -1,12 +1,12 @@
 /* contact.css */
 
 /* ---- Version desktop ---- */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 750px) {
   /* Global container */
   .contact-container {
     display: flex;
     flex-direction: column;
-    height: 90vh;
+    height: 90dvh;
     position: absolute;
     width: 100dvw;
     top: 10dvh;

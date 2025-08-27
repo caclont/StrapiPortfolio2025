@@ -79,8 +79,8 @@
   .projects-loader{
     width: 100dvw;
     position: absolute;
-    top: 50dvh;
-
+    top: calc(50dvh - 1rem);
+    font-size: 2rem;
     text-align: center;
   }
   .project-category-button.active {

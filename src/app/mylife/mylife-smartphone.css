@@ -1,4 +1,4 @@
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 750px) {
   .arrow {
     font-family: 'M PLUS 1p', sans-serif;
     font-weight: normal;
@@ -44,10 +44,14 @@
     font-weight: bold;
     z-index: 11;
     overflow-y: auto;
+    overflow-x: hidden;
   }
-
+  
   .year-item {
-    font-size: 7dvw;
+    font-size: 2rem;
+    width: 100%;
+    overflow: hidden;
+    /* font-size: 7dvw; */
     text-align: left;
     transition: transform 0.3s ease;
   }
