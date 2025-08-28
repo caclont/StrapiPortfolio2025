@@ -6,7 +6,7 @@
   width: 100dvw;
   height: 100dvh;
   background-color: red;
-  background-image: url("./assets/UnderMaintenance0.png");
+  /* background-image: url("./assets/UnderMaintenance0.png"); */
   background-repeat: no-repeat;
   background-position: center;
   z-index: 10000;
@@ -30,7 +30,7 @@
   height: 100%;
     overflow: hidden;
   background-color: red;
-  background-image: url("./assets/Background.gif");
+  /* background-image: url("./assets/Background.gif"); */
   background-size: cover;
   background-position: center;
   display: flex;
