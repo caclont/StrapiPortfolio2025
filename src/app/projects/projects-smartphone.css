@@ -24,7 +24,7 @@
       "title category";
     gap: 0.3rem;
     align-items: center;
-    padding: 0.5rem 0.8rem;
+    padding: 0.5rem 0.5rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     transition: transform 0.3s ease, opacity 0.3s ease, height 0.3s ease, margin 0.3s ease;
   }
@@ -81,9 +81,9 @@
     background-color: black;
     color: white;
     border: 1px solid white;
-    padding: 0.2rem 0.5rem;
+    padding: 0rem 0.3rem;
     border-radius: 200px;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     white-space: nowrap;
     transition: all 0.3s ease;
   }

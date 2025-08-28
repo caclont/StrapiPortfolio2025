@@ -6,10 +6,10 @@
   .contact-container {
     display: flex;
     flex-direction: column;
-    height: 90dvh;
+    height: 95dvh;
     position: absolute;
     width: 100dvw;
-    top: 10dvh;
+    top: 5dvh;
     color: white;
     font-size: 1rem;
     padding: 1rem;

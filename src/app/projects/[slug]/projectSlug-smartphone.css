@@ -17,7 +17,7 @@
     position: fixed;
     top: 0;
     right: 0;
-    width: 4rem;
+    width: 2rem;
     height: 100vh;
     font-size: 1rem;
     transition: width 0.3s ease-in-out;
@@ -40,8 +40,8 @@
     height: 95dvh;
     /* position: relative; */
     /* top: 7dvh; */
-    width: calc(100dvw - 4rem); /* largeur totale - largeur du bouton */
-    margin-right: 4rem; /* espace pour le bouton fixe */
+    width: calc(100dvw - 2rem);
+    margin-right: 2rem; /* espace pour le bouton fixe */
   }
 
   .project-slug-text {
@@ -50,35 +50,38 @@
   }
 
   .project-slug-title {
-    font-size: 2.5rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
     line-height: 0.9;
   }
 
   .project-slug-category-container {
-    display: flex;
+    /* display: flex; */
     margin-top: 0.5rem;
   }
 
   .project-slug-category {
     background-color: black;
     color: white;
+    width: fit-content;
     border: 1px solid white;
-    padding: 0.2rem 0.5rem;
+    padding: 0rem 0.5rem;
     margin-right: 0.1rem;
+    margin-top: 0.2rem;
     border-radius: 200px;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
   }
 
   .project-slug-description {
     margin-top: 0.5rem;
-    font-size: 1rem;
+    font-size: 0.7rem;
     overflow-y: auto;
+    line-height: 0.8rem;
   }
 
   .project-slug-bottom-meta {
     text-align: right;
-    font-size: 2rem;
+    font-size: 1rem;
     color: grey;
     margin-top: auto;
     padding-top: 1rem;

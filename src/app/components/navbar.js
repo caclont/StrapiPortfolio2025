@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import './navbar.css';
-import './navbar-smartphone.css';
 import './navbar-tablet.css';
+import './navbar-smartphone.css';
 
 export default function Navbar() {
   const pathname = usePathname();
