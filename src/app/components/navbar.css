@@ -82,3 +82,12 @@
 }
 
 }
+.navbar-show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* si on ajoute cette classe, la transition va s'exécuter */
+.navbar-animate {
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}

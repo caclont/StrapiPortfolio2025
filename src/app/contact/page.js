@@ -40,7 +40,7 @@ export default function Home() {
       </div>
 
       <div className="contact-video">
-        <p style={{ color: 'white' }}>Video / GIF</p>
+        <p style={{ color: 'white' }}></p>
       </div>
 
       <div className="contact-text-bottom">
