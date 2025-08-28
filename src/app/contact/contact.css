@@ -70,7 +70,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("../assets/Background.gif");
+    background-color: red;
+    /* background-image: url("../assets/Background.gif"); */
     background-size: cover;
     background-position: center;
     flex-grow: 1; /* occupe l'espace restant entre top et bottom */
