@@ -11,8 +11,11 @@ export default function Home() {
 
       <div className="home-grid">
         <div className="intro">
-          <h2>Hi ! I'm Alex</h2>
-          <p>I am an Interactive Media Designer passionate about creativity, user experience, and learning new technologies.</p>
+          <h2>Hi ! I&apos;m Alex</h2>
+          <p>
+            I am an Interactive Media Designer passionate about creativity,
+            user experience, and learning new technologies.
+          </p>
         </div>
 
         <div className="education">
