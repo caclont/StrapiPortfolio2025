@@ -1,8 +1,9 @@
 /* \src\app\mylife\gridVariantMyLife.css */
 
-/* ------------------- Mapping des zones ------------------- */
-.mylife-images-grid img:nth-child(1) { grid-area: img1; }
-.mylife-images-grid img:nth-child(2) { grid-area: img2; }
+
+  /* ------------------- Mapping des zones ------------------- */
+  .mylife-images-grid img:nth-child(1) { grid-area: img1; }
+  .mylife-images-grid img:nth-child(2) { grid-area: img2; }
 .mylife-images-grid img:nth-child(3) { grid-area: img3; }
 .mylife-images-grid img:nth-child(4) { grid-area: img4; }
 .mylife-images-grid img:nth-child(5) { grid-area: img5; }
@@ -41,24 +42,24 @@
     "img1 img2"
     "img1 img2"
     "img1 .";
-}
+  }
 .mylife-grid-2-variant-2 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: calc(30% - 0.5rem) calc(30% - 1rem) calc(40% - 0.5rem);
   grid-template-areas:
-    "img1 img1 img2"
-    "img1 img1 img2"
-    "img1 img1 img2";
+  "img1 img1 img2"
+  "img1 img1 img2"
+  "img1 img1 img2";
 }
 .mylife-grid-2-variant-3 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: calc(30% - 0.5rem) calc(40% - 1rem) calc(30% - 0.5rem);
   grid-template-areas:
-    "img1 img2"
-    "img1 img2"
-    ". img2";
+  "img1 img2"
+  "img1 img2"
+  ". img2";
 }
 
 /* === 3 IMAGES === */
@@ -67,27 +68,27 @@
   grid-template-columns: 2fr 1fr;
   grid-template-rows: calc(30% - 0.5rem) calc(35% - 1rem) calc(35% - 0.5rem);
   grid-template-areas:
-    "img1 img2"
-    "img1 img3"
-    "img1 img3";
+  "img1 img2"
+  "img1 img3"
+  "img1 img3";
 }
 .mylife-grid-3-variant-2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: calc(30% - 0.5rem) calc(40% - 1rem) calc(30% - 0.5rem);
   grid-template-areas:
-    "img1 img2"
-    "img3 img3"
-    "img3 img3";
+  "img1 img2"
+  "img3 img3"
+  "img3 img3";
 }
 .mylife-grid-3-variant-3 {
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: calc(40% - 0.5rem) calc(25% - 1rem) calc(35% - 0.5rem);
   grid-template-areas:
-    "img1 img2"
-    "img1 img2"
-    "img3 img3";
+  "img1 img2"
+  "img1 img2"
+  "img3 img3";
 }
 
 /* === 4 IMAGES === */
@@ -96,27 +97,27 @@
   grid-template-columns: 1fr 1fr 2fr;
   grid-template-rows: calc(30% - 0.5rem) calc(20% - 1rem) calc(50% - 0.5rem);
   grid-template-areas:
-    "img1 img1 img2"
-    "img3 img3 img2"
+  "img1 img1 img2"
+  "img3 img3 img2"
     "img3 img3 img4";
-}
-.mylife-grid-4-variant-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr 2fr;
-  grid-template-rows: calc(40% - 0.5rem) calc(30% - 1rem) calc(30% - 0.5rem);
+  }
+  .mylife-grid-4-variant-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-rows: calc(40% - 0.5rem) calc(30% - 1rem) calc(30% - 0.5rem);
   grid-template-areas:
     "img1 img1 img2"
     "img3 img3 img2"
     "img4 img4 img4";
-}
-.mylife-grid-4-variant-3 {
+  }
+  .mylife-grid-4-variant-3 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: calc(30% - 0.5rem) calc(30% - 1rem) calc(40% - 0.5rem);
   grid-template-areas:
-    "img1 img2"
-    "img3 img2"
-    "img3 img4";
+  "img1 img2"
+  "img3 img2"
+  "img3 img4";
 }
 
 /* === 5 IMAGES === */
@@ -128,8 +129,8 @@
     "img1 img1 img2 img2"
     "img3 img3 img2 img2"
     "img3 img3 img5 img4";
-}
-.mylife-grid-5-variant-2 {
+  }
+  .mylife-grid-5-variant-2 {
   display: grid;
   grid-template-columns: 1fr 2fr 2fr;
   grid-template-rows: calc(35% - 0.5rem) calc(35% - 1rem) calc(30% - 0.5rem);
@@ -137,15 +138,15 @@
     "img1 img1 img2"
     "img3 img3 img4"
     "img5 img5 img4";
-}
-.mylife-grid-5-variant-3 {
-  display: grid;
+  }
+  .mylife-grid-5-variant-3 {
+    display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: calc(30% - 0.5rem) calc(35% - 1rem) calc(35% - 0.5rem);
   grid-template-areas:
-    "img1 img2 img2"
-    "img3 img4 img5"
-    "img3 img4 img5";
+  "img1 img2 img2"
+  "img3 img4 img5"
+  "img3 img4 img5";
 }
 
 /* === 6 IMAGES === */
@@ -154,25 +155,25 @@
   grid-template-columns: 1fr 1fr 6fr 1fr;
   grid-template-rows: calc(30% - 0.5rem) calc(25% - 1rem) calc(45% - 0.5rem);
   grid-template-areas:
-    "img1 img1 img2 img2"
-    "img5 img5 img3 img4"
-    "img5 img5 img6 img6";
+  "img1 img1 img2 img2"
+  "img5 img5 img3 img4"
+  "img5 img5 img6 img6";
 }
 .mylife-grid-6-variant-2 {
   display: grid;
   grid-template-columns: 1fr 2fr 2fr 1fr;
   grid-template-rows: calc(30% - 0.5rem) calc(45% - 1rem) calc(25% - 0.5rem);
   grid-template-areas:
-    "img1 img1 img2 img2"
-    "img3 img3 img4 img4"
-    "img5 img5 img6 img6";
+  "img1 img1 img2 img2"
+  "img3 img3 img4 img4"
+  "img5 img5 img6 img6";
 }
 .mylife-grid-6-variant-3 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: calc(55% - 0.5rem) calc(15% - 1rem) calc(30% - 0.5rem);
   grid-template-areas:
-    "img1 img2 img2"
-    "img3 img4 img5"
-    "img6 img6 img5";
+  "img1 img2 img2"
+  "img3 img4 img5"
+  "img6 img6 img5";
 }

@@ -10,10 +10,12 @@ import "./gridVariant.css";
 import Lightbox from "../../../utils/lightbox";
 import EscapeRedirect from "../../../utils/EscapeRedirect";
 import { M_PLUS_1p } from "next/font/google";
+
 const mPlus1p = M_PLUS_1p({
   weight: ["400", "700"],
   subsets: ["latin"],
 });
+
 const gridVariantsByCount = {
   1: ["grid-1-variant-1", "grid-1-variant-2", "grid-1-variant-3"],
   2: ["grid-2-variant-1", "grid-2-variant-2", "grid-2-variant-3"],
@@ -32,6 +34,7 @@ export default function ProjectPage() {
   const router = useRouter();
   const [projet, setProjet] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [isAnimating, setIsAnimating] = useState(false); // <- animation du bouton
 
   useEffect(() => {
     async function loadProjet() {
@@ -52,80 +55,95 @@ export default function ProjectPage() {
     Math.floor(Math.random() * gridVariantsByCount[limitedMedia.length].length)
   ] || "";
 
-  const handleBack = () => {
-    const scrollY = sessionStorage.getItem("projectsScroll") || 0;
-    router.push("/projects", { scroll: parseInt(scrollY, 10) });
+  const handleBack = (e) => {
+    e?.preventDefault?.();
+    e?.stopPropagation?.();
+    if (isAnimating) return;
+
+    setIsAnimating(true);
+
+    // Redirection après 1 seconde
+    setTimeout(() => {
+      const scrollY = parseInt(sessionStorage.getItem("projectsScroll") || "0", 10);
+      router.push("/projects", { scroll: false });
+    }, 300);
   };
 
   return (
     <main className="project-page-wrapper">
-  <EscapeRedirect to="/projects" />
+      <EscapeRedirect to="/projects" />
 
-  <button className="back-button" onClick={handleBack}>←</button>
+      <button
+        type="button"
+        className={`back-button ${isAnimating ? "back-anim" : ""}`}
+        onClick={handleBack}
+        aria-disabled={isAnimating}
+      >
+        ←
+      </button>
 
-  <div className="project-slug-container">
-    <div className="project-slug-text">
-      <h1 className="project-slug-title">{projet.titre}</h1>
-      <div className="project-slug-category-container">
-        {projet.categories?.map((cat, idx) => (
-          <p key={idx} className="project-slug-category">{cat}</p>
-        ))}
-      </div>
-      <p className="project-slug-description">
-        {projet.explication || "Pas d’explication disponible."}
-      </p>
-      <div className="project-slug-bottom-meta">
-        {projet.collaboration && <p className="collab">{projet.collaboration}</p>}
-        <span><span className="arrow">→</span> {projet.annees?.[0] || "?"}</span>
-      </div>
-    </div>
+      <div className="project-slug-container">
+        <div className="project-slug-text">
+          <h1 className="project-slug-title">{projet.titre}</h1>
+          <div className="project-slug-category-container">
+            {projet.categories?.map((cat, idx) => (
+              <p key={idx} className="project-slug-category">{cat}</p>
+            ))}
+          </div>
+          <p className="project-slug-description">
+            {projet.explication || "Pas d’explication disponible."}
+          </p>
+          <div className="project-slug-bottom-meta">
+            {projet.collaboration && <p className="collab">{projet.collaboration}</p>}
+            <span><span className="arrow">→</span> {projet.annees?.[0] || "?"}</span>
+          </div>
+        </div>
 
-    <div className="project-slug-media">
-      <div className={`project-slug-images ${gridClass}`}>
-        {limitedMedia.length ? limitedMedia.map((media, index) => {
-          const gridArea = `img${index + 1}`;
-          const zIndex = Math.random() < 0.5 ? 9 : 11;
+        <div className="project-slug-media">
+          <div className={`project-slug-images ${gridClass}`}>
+            {limitedMedia.length ? limitedMedia.map((media, index) => {
+              const gridArea = `img${index + 1}`;
+              const zIndex = Math.random() < 0.5 ? 9 : 11;
 
-          if (media.type === "image") {
-            return (
-              <img
-                key={index}
-                src={media.url}
-                alt={media.alt || `Média ${index + 1}`}
-                className="clickable-img"
-                style={{ gridArea, zIndex }}
-              />
-            );
-          }
-
-          if (media.type === "video") {
-            const vimeoUrl = `${media.url}?autoplay=1&loop=1&muted=1&background=1`;
-            return (
-              <div
-                key={index}
-                className="clickable-iframe-container"
-                style={{ gridArea, zIndex }}
-              >
-                <div className="iframe-cover-wrapper">
-                  <iframe
-                    src={vimeoUrl}
-                    title={media.titre || `Video ${index + 1}`}
-                    allow="autoplay; fullscreen"
-                    allowFullScreen
+              if (media.type === "image") {
+                return (
+                  <img
+                    key={index}
+                    src={media.url}
+                    alt={media.alt || `Média ${index + 1}`}
+                    className="clickable-img"
+                    style={{ gridArea, zIndex }}
                   />
-                </div>
-              </div>
-            );
-          }
+                );
+              }
 
-          return null;
-        }) : <p>Aucun média</p>}
+              if (media.type === "video") {
+                const vimeoUrl = `${media.url}?autoplay=1&loop=1&muted=1&background=1`;
+                return (
+                  <div
+                    key={index}
+                    className="clickable-iframe-container"
+                    style={{ gridArea, zIndex }}
+                  >
+                    <div className="iframe-cover-wrapper">
+                      <iframe
+                        src={vimeoUrl}
+                        title={media.titre || `Video ${index + 1}`}
+                        allow="autoplay; fullscreen"
+                        allowFullScreen
+                      />
+                    </div>
+                  </div>
+                );
+              }
+
+              return null;
+            }) : <p>Aucun média</p>}
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <Lightbox />
-</main>
-
+      <Lightbox />
+    </main>
   );
 }

@@ -1,5 +1,4 @@
 @media screen and (max-width: 750px) {
-
   .arrow {
     font-family: 'M PLUS 1p', sans-serif;
     font-weight: normal;
@@ -9,61 +8,55 @@
     display: flex;
     flex-direction: row-reverse;
     position: relative;
-    top: 10dvh;
-    height: 90dvh;
+    top: 7dvh;
+    height: 100dvh;
     width: 100dvw;
   }
 
-  /* back-button animé */
   .back-button {
-    display: none;
-    font-size: 1rem;
-    height: 95dvh;
+    position: fixed;
+    top: 0;
+    right: 0;
     width: 4rem;
-    min-width: 2rem;
-    max-width: 4rem;
-    transition: width 0.4s ease, background-color 0.4s ease, font-size 0.4s ease;
-    /* background-color: red; */
+    height: 100vh;
+    font-size: 1rem;
+    transition: width 0.3s ease-in-out;
     color: white;
+    background-color: black;
     border: none;
-    border-right: 1px solid white;
+    border-left: 1px solid white;
     text-transform: uppercase;
-    /* z-index: 10000; */
+    z-index: 100;
   }
 
-  /* container principal */
+  .back-button.back-anim {
+    width: 100dvw; /* s’étend sur toute la largeur */
+  }
+
   .project-slug-container {
-    flex: 1;
-    /* display: grid; */
-    /* grid-template-columns: 1fr 1fr; */
-    transition: margin-left 0.4s ease;
-    /* padding: 1rem; */
-    height: 95dvh;
-    width: 100dvw;
     /* background-color: red; */
+    flex: 1;
+    transition: margin-left 0.4s ease;
+    height: 95dvh;
+    /* position: relative; */
+    /* top: 7dvh; */
+    width: calc(100dvw - 4rem); /* largeur totale - largeur du bouton */
+    margin-right: 4rem; /* espace pour le bouton fixe */
   }
 
-  /* autres styles non modifiés */
   .project-slug-text {
-    /* background-color: blue; */
     padding: 1rem;
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: space-between; */
     z-index: 11;
   }
 
   .project-slug-title {
-    /* background-color: aqua; */
     font-size: 2.5rem;
     text-transform: uppercase;
     line-height: 0.9;
   }
 
   .project-slug-category-container {
-    /* background-color: beige; */
     display: flex;
-    /* flex-wrap: wrap; */
     margin-top: 0.5rem;
   }
 
@@ -80,8 +73,6 @@
   .project-slug-description {
     margin-top: 0.5rem;
     font-size: 1rem;
-    /* width: 80%; */
-    /* text-align: justify; */
     overflow-y: auto;
   }
 
@@ -91,7 +82,6 @@
     color: grey;
     margin-top: auto;
     padding-top: 1rem;
-    /* padding-bottom: 1rem; */
     display: flex;
     flex-direction: column;
     line-height: 1.7rem;
@@ -104,17 +94,17 @@
 
   .project-slug-media {
     height: calc(95dvh - 1rem);
-    /* background-color: green; */
   }
+
   .project-slug-images {
     padding: 1rem;
     height: calc(95dvh - 1rem);
-    /* display: grid; */
     gap: 1rem;
   }
 
   .project-slug-media img,
   .project-slug-media .clickable-iframe-container {
+    padding-bottom: 1rem;
     object-fit: cover;
     width: 100%;
     height: 100%;

@@ -1,5 +1,27 @@
-@media screen and (min-width: 1025px) {
+.projects-loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90dvh; /* occupe tout l'écran */
+  background-color: black; /* fond sombre */
+}
 
+.projects-loader {
+  width: 60px;
+  height: 60px;
+  border: 6px double rgba(255, 255, 255, 0.2);
+  border-top-color: white; /* couleur du “segment actif” */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (min-width: 1025px) {
   .projects-table {
     display: flex;
     flex-direction: column;
@@ -75,13 +97,6 @@
     z-index: 10;
 
     transition: all 0.3s ease;
-  }
-  .projects-loader{
-    width: 100dvw;
-    position: absolute;
-    top: calc(50dvh - 1rem);
-    font-size: 2rem;
-    text-align: center;
   }
   .project-category-button.active {
     background-color: white;

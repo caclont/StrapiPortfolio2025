@@ -130,7 +130,6 @@ export default function MylifePage() {
 
   return (
     <div className={`mylife-layout ${mPlus1p.className}`}>
-      <div className="graphiqueMyLife"></div>
 
       <aside className="mylife-years">
         {HARDCODED_YEARS.map((year) => (

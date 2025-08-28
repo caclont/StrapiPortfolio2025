@@ -45,7 +45,7 @@ export default function Projects() {
     if (!img) return;
 
     const sidePadding = 20;
-    const topPadding = window.innerHeight * 0.1;
+    const topPadding = (window.innerHeight * 0.1)+10;
     const bottomPadding = 20;
 
     const imgWidth = img.offsetWidth;
@@ -100,7 +100,7 @@ export default function Projects() {
   if (loading) {
     return (
       <div className="projects-loader-container">
-        <div className="projects-loader">My CMS seems to have asthma atm...</div>
+        <div className="projects-loader"></div>
       </div>
     );
   }

@@ -4,8 +4,8 @@ import Navbar from './components/navbar';
 import Cursor from '../utils/cursor';
 
 export const metadata = {
-  title: "Alexandre Gambarini",
-  description: "Wanna work together ? :)",
+  title: "AG | Interactive Media Designer",
+  description: "I am an Interactive Media Designer graduated from ECAL passionate about creativity, user experience, and learning new technologies.",
 };
 
 export default function RootLayout({ children }) {

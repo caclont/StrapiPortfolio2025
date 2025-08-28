@@ -1,0 +1,246 @@
+@media (min-width: 2500px){
+  html{
+    width: 80dvw;
+    margin: 0dvh 10dvw;
+  }
+  .role-label{
+    width: 80%!important;
+  }
+}
+@media screen and (max-width: 750px) {
+
+  .home-container {
+    position: relative;
+    width: 100%;
+    top: 8.4dvh;
+    /* max-height: 90dvh; */
+    /* background-color: blue; */
+    background-image: url("../assets/Background.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+    font-family: Helvetica, Arial, sans-serif;
+    overflow: hidden;
+      font-size: 1rem;
+    /* padding: 1rem; */
+  }
+  /* Role label vertical */
+  .role-label {
+    position: fixed;
+    background-color: black;
+    top: 7vh;
+    width: 100%;
+    font-weight: bold;
+    text-transform: uppercase;
+    height: calc(clamp(1rem, 5vw, 6rem) + 1.5rem);
+    letter-spacing: 0.05em;
+    color: #fff;
+    padding: 0rem 1rem;
+    font-size: clamp(1rem, 5vw, 6rem);
+    white-space: normal; /* autoriser le retour à la ligne */
+    text-align: justify;
+  }
+  .role-label::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+  }
+
+  /* La vraie grid */
+  .home-grid {
+
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 0rem 1rem 3rem 1rem;
+    top: calc(clamp(1rem, 5.5vw, 6rem) + 0.2rem);
+    display: grid;
+    gap: 1rem;
+    width: 100%;
+    height: fit-content;
+    /* height: calc(90dvh - calc(clamp(1rem, 5.5vw, 6rem) + 0rem)); */
+    /* max-height: calc(90dvh - calc(clamp(1rem, 5.5vw, 6rem) + 1.5rem)); */
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "intro"
+      "education"
+      "bio"
+      "soft-skills"
+      "languages"
+      "hobbies"
+  }
+
+  h2{
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: 1px solid white;
+    /* background-color: red; */
+    
+  }
+
+  .intro { 
+    grid-area: intro; 
+    animation-delay: 0.2s; 
+  }
+  .intro p{
+    line-height: 1.1rem;
+    padding-top: 1rem;
+  }
+
+  .education { 
+    grid-area: education;
+    animation-delay: 0.4s;
+  }
+  .education ul li{
+    text-transform: uppercase;
+    line-height: 1.1rem;
+    padding-top: 1rem;
+    list-style-type:square;
+    width: calc(100% - 1rem);
+    position: relative;
+    left: 1rem;
+    /* background-color: red; */
+  }
+
+  .bio { 
+    grid-area: bio; 
+    animation-delay: 0.6s; 
+    max-height: 60dvh;
+    overflow-y: auto;
+  }
+  .bio p{
+    line-height: 1.1rem;
+    padding-top: 1rem;
+  }
+
+  .soft-skills { 
+    grid-area: soft-skills; 
+    animation-delay: 0.8s; 
+  }
+  .soft-skills-list {
+    display: flex;
+    gap: 2rem;
+    padding-top: 1rem;
+    /* background-color: red; */
+  }
+  .soft-skills-list ul {
+    margin: 0;
+    padding: 0;
+    list-style: square;
+    width: calc(100% - 5rem);
+    /* background-color: green; */
+    /* width: 100%; */
+  }
+  .soft-skills-list ul li {
+    /* background-color: blue; */
+    line-height: 1.5rem;
+    text-transform: uppercase;
+    line-height: 1.5rem;
+    list-style-type:square;
+    width: calc(100% - 1rem);
+    position: relative;
+    left: 1rem;
+  }
+
+  .languages { 
+    grid-area: languages; 
+    animation-delay: 1s; 
+  }
+  .languages-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .languages-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .lang-bar {
+    flex: 1;
+    height: 0.5rem;
+    background-color: black;
+    border: 1px solid white;
+    overflow: hidden;
+  }
+
+  .lang-fill {
+    height: 100%;
+    background-color: #fff;
+    width: 0; /* départ à 0 pour animation */
+    transition: width 1s ease-in-out;
+  }
+
+  .languages-list li:hover .lang-fill {
+    width: var(--lang-percent); /* On définira la largeur via React inline style */
+  }
+
+
+  .hobbies { 
+    grid-area: hobbies; 
+    animation-delay: 1.2s;
+  }
+  .hobbies-list {
+    display: flex;
+    /* gap: 2rem; */
+    padding-top: 1rem;
+  }
+  .hobbies-list ul {
+    margin: 0;
+    padding: 0;
+    list-style-type:square;
+    width: calc(100% - 2rem);
+    position: relative;
+    left: 2rem;
+  }
+  .hobbies-list ul li {
+    line-height: 1.5rem;
+  }
+
+  .tech-skills {
+    grid-area: hobbies; /* on remplace l'ancienne zone hobbies */
+    animation-delay: 1.2s;
+  }
+
+  .tech-skills-list {
+    display: flex;
+    gap: 2rem;
+    padding-top: 1rem;
+  }
+
+  .tech-skills-list ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: square;
+    width: calc(100% - 0rem);
+    padding: 0rem 1rem;
+    position: relative;
+    /* left: 1rem; */
+  }
+
+  .tech-skills-list ul li {
+    line-height: 1.5rem;
+  }
+
+  .home-grid > div {
+    animation: fadeIn 0.8s forwards;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px dashed white;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .home-grid > div:hover {
+    /* transform: scale(0.8); */
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 0px 20px rgba(255, 255, 255, 0.3);
+  }
+}
