@@ -136,7 +136,7 @@
   }
   .soft-skills-list ul li {
     /* background-color: blue; */
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     line-height: 1rem;
     list-style-type:square;
     width: calc(100% - 1rem);
@@ -150,8 +150,9 @@
   }
   .languages-list {
     list-style: none;
-    padding: 0;
+    /* padding: 0; */
     margin: 0;
+    padding-top: 0.5rem;
   }
 
   .languages-list li {

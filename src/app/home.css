@@ -18,7 +18,7 @@
   width: calc(100dvw - 0rem);
   height: calc(100dvh - 0rem);
   backdrop-filter: blur(10px);
-  
+  pointer-events: none;
   background-color: rgba(0,0,0,0.3); /* si tu veux un peu de sombre derrière */
   z-index: 0;
 }
@@ -39,6 +39,7 @@
   align-items: center;
   /* width: 100; */
   /* height: auto; */
+  pointer-events: none;
 }
 
 .text {
@@ -49,6 +50,7 @@
   background-color: black;
   padding: 0 2rem;
   white-space: nowrap;
+  pointer-events: none;
 }
 
 
@@ -57,6 +59,7 @@
   color: black;
   background-color: white;
   /* border: 0.5dvw solid grey; */
+  pointer-events: none;
 }
 .background-canvas {
   position: fixed;
@@ -65,5 +68,6 @@
   width: 100vw;
   height: 100vh;
   z-index: 0;
+  pointer-events: all;
 }
 

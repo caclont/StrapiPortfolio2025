@@ -5,11 +5,11 @@ export default function initParticlesBackground(canvas) {
   const BORDER_COLOR = '#ffffffff';
   const BORDER_SIZE = 2;
   const FRICTION = 0.9;
-  
+
   // Détecte si on est sur mobile / tactile
   const isMobile = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-  
-  // Rayon d’attraction adapté
+
+  // Rayon d’attraction et force adaptés
   const INTERACTION_DISTANCE = isMobile ? 100 : 400;
   const INTERACTION_STRENGTH = isMobile ? 0.2 : 0.7;
 
@@ -35,47 +35,53 @@ export default function initParticlesBackground(canvas) {
   createParticles();
 
   // Pointeur universel desktop + mobile
-  const pointer = { x: width / 2, y: height / 2 };
+  const pointer = { x: width / 2, y: height / 2, active: false };
 
   // desktop
   window.addEventListener('mousemove', e => {
     pointer.x = e.clientX;
     pointer.y = e.clientY;
+    pointer.active = true;
   });
 
   // mobile / tactile
   canvas.addEventListener('touchstart', e => {
-    const t = e.touches[0];
-    pointer.x = t.clientX;
-    pointer.y = t.clientY;
-  });
+  const t = e.touches[0];
+  pointer.x = t.clientX;
+  pointer.y = t.clientY;
+  pointer.active = true;
+  console.log('touchstart', pointer.x, pointer.y);
+});
 
-  canvas.addEventListener('touchmove', e => {
-    const t = e.touches[0];
-    pointer.x = t.clientX;
-    pointer.y = t.clientY;
-    e.preventDefault(); // évite le scroll
-  });
+canvas.addEventListener('touchmove', e => {
+  const t = e.touches[0];
+  pointer.x = t.clientX;
+  pointer.y = t.clientY;
+  pointer.active = true;
+  console.log('touchmove', pointer.x, pointer.y); // <-- debug
+  e.preventDefault(); // empêche le scroll
+});
 
-  window.addEventListener('resize', () => {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
-    createParticles();
-  });
+canvas.addEventListener('touchend', e => {
+  pointer.active = false;
+  console.log('touchend');
+});
 
   function animate() {
     ctx.clearRect(0, 0, width, height);
 
     particles.forEach(p => {
-      const dx = p.x - pointer.x;
-      const dy = p.y - pointer.y;
-      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (pointer.active) {
+        const dx = p.x - pointer.x;
+        const dy = p.y - pointer.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
 
-      if (dist < INTERACTION_DISTANCE) {
-        const angle = Math.atan2(dy, dx);
-        const force = (INTERACTION_DISTANCE - dist) / INTERACTION_DISTANCE * INTERACTION_STRENGTH;
-        p.vx -= Math.cos(angle) * force;
-        p.vy -= Math.sin(angle) * force;
+        if (dist < INTERACTION_DISTANCE) {
+          const angle = Math.atan2(dy, dx);
+          const force = (INTERACTION_DISTANCE - dist) / INTERACTION_DISTANCE * INTERACTION_STRENGTH;
+          p.vx -= Math.cos(angle) * force;
+          p.vy -= Math.sin(angle) * force;
+        }
       }
 
       // viscosité
