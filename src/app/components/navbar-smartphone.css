@@ -10,7 +10,7 @@
     /* padding-bottom: 0rem; */
     background-color: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(10px);
-    box-shadow: 0px -10px 20px 20px black;
+    box-shadow: 0px -5px 10px 10px black;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

@@ -33,11 +33,8 @@
   .back-button:hover {
     width: 4rem;
     font-size: 2rem;
-    /* background-color: white; */
-    /* color: black; */
   }
   .back-button.back-anim {
-    /* width: 10rem; */
     background-color: grey;
     color: black;
   }

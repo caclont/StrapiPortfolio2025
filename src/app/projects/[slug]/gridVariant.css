@@ -45,7 +45,7 @@
   grid-template-rows: calc(50% - 0.5rem) calc(50% - 0.5rem);
   grid-template-areas:
     "img1 img2"
-    ". .";
+    "img1 img2";
 }
 
 /* === 3 IMAGES === */
@@ -88,12 +88,12 @@
 }
 .grid-4-variant-2 {
   display: grid;
-  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: calc(35% - 0.5rem) calc(35% - 1rem) calc(30% - 0.5rem);
   grid-template-areas:
     "img1 img1 img2"
-    ". img3 img2"
-    ". . img4";
+    "img1 img1 img2"
+    "img3 img3 img4";
 }
 .grid-4-variant-3 {
   display: grid;

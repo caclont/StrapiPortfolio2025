@@ -15,7 +15,7 @@
     height: 90dvh;
     max-height: 90dvh;
     /* background-color: blue; */
-    /* background-image: url("../assets/Background.gif"); */
+    /* background-image: url("https://res.cloudinary.com/dweali6ld/image/upload/v1756468876/Background_1_gbuqta.gif"); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -176,7 +176,6 @@
   .languages-list li:hover .lang-fill {
     width: var(--lang-percent); /* On définira la largeur via React inline style */
   }
-
 
   .hobbies { 
     grid-area: hobbies; 

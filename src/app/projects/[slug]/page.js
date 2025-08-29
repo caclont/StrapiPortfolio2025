@@ -49,8 +49,10 @@ export default function ProjectPage() {
   if (loading) return <div className="loader"></div>;
   if (!projet) return <p>Projet introuvable</p>;
 
-  const mediaItems = [...(projet.images || []), ...(projet.videos || [])];
+  const imagesSansPremiere = (projet.images || []).slice(1);
+  const mediaItems = [...imagesSansPremiere, ...(projet.videos || [])];
   const limitedMedia = mediaItems.slice(0, 10);
+
   const gridClass = gridVariantsByCount[limitedMedia.length]?.[
     Math.floor(Math.random() * gridVariantsByCount[limitedMedia.length].length)
   ] || "";
