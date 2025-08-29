@@ -65,7 +65,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    /* background-color: white; */
+    border: 2px dashed white;
     /* background-image: url("../assets/Background.gif"); */
     background-size: cover;
     background-position: center;
