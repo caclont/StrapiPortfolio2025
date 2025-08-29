@@ -9,7 +9,7 @@ import initParticlesBackground from '../utils/ParticlesBackground';
 —————————————————————————————————*/
 const PHRASES = ['Alexandre Gambarini', 'Interactive Media Designer'];
 const SCRAMBLE_CHARS = '!<>-_\\/[]{}—=+*^?#________';
-const ANIMATION_SPEED = 20; // plus petit = plus rapide
+const ANIMATION_SPEED = 70; // plus petit = plus rapide
 const DISPLAY_TIME = 2000; // temps d'affichage avant switch
 const TEXT_COLOR = '#FAFAFA';
 const DUD_COLOR = '#757575';

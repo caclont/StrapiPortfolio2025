@@ -11,7 +11,7 @@ export default function initParticlesBackground(canvas) {
 
   // Rayon d’attraction et force adaptés
   const INTERACTION_DISTANCE = isMobile ? 100 : 400;
-  const INTERACTION_STRENGTH = isMobile ? 0.2 : 0.7;
+  const INTERACTION_STRENGTH = isMobile ? 0.4 : 0.7;
 
   const ctx = canvas.getContext('2d');
   let width = canvas.width = window.innerWidth;
