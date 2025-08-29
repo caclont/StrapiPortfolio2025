@@ -47,7 +47,7 @@
   font-size: 5dvw;
   text-transform: uppercase;
   color: #FAFAFA;
-  background-color: black;
+  /* background-color: black; */
   padding: 0 2rem;
   white-space: nowrap;
   pointer-events: none;
