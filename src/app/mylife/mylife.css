@@ -1,4 +1,39 @@
 /* \src\app\mylife\mylife.css */
+.projects-loader-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+}
+
+.projects-loader {
+  width: 40px;
+  height: 40px;
+  border: 4px double rgba(255, 255, 255, 0.2);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.projects-loader-text {
+  margin-top: 0.5rem;
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 @media screen and (min-width: 1025px) {
   .arrow {
@@ -17,21 +52,6 @@
     gap: 1rem;
     height: 90dvh;
     padding: 1rem 1rem 0 1rem;
-  }
-
-  .graphiqueMyLife {
-    position: fixed; 
-    top: 20dvh;       
-    right: -40dvw;         
-    width: 100dvw;
-    height: 100dvh;
-    transform: scaleX(-100%);
-    background-image: url("../assets/graphik/mylife.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: bottom;
-    z-index: 10;
-    pointer-events: none;
   }
 
   /* Colonne Années */

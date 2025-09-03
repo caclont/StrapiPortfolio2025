@@ -1,30 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490.77 145.36">
+<svg id="Calque_2" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 490.8 134.4">
+  <!-- Generator: Adobe Illustrator 29.7.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 8)  -->
   <defs>
     <style>
-      .cls-1 {
-        fill: #5758bb;
+      .st0 {
+        fill: #fff;
       }
     </style>
   </defs>
-  <g id="Calque_1-2" data-name="Calque 1">
+  <g id="Calque_1-2">
     <g>
-      <g>
-        <rect class="cls-1" width="7.03" height="145.36"/>
-        <rect class="cls-1" x="45.17" width="14.07" height="145.36"/>
-        <rect class="cls-1" x="90.34" width="21.1" height="145.36"/>
-        <rect class="cls-1" x="135.51" width="28.13" height="145.36"/>
-        <rect class="cls-1" x="180.68" width="35.16" height="145.36"/>
-        <rect class="cls-1" x="225.85" width="42.2" height="145.36"/>
-      </g>
-      <g>
-        <rect class="cls-1" x="483.74" width="7.03" height="145.36"/>
-        <rect class="cls-1" x="432.16" width="14.07" height="145.36"/>
-        <rect class="cls-1" x="380.58" width="21.1" height="145.36"/>
-        <rect class="cls-1" x="329" width="28.13" height="145.36"/>
-        <rect class="cls-1" x="277.43" width="35.16" height="145.36"/>
-        <rect class="cls-1" x="225.85" width="42.2" height="145.36"/>
-      </g>
+      <rect class="st0" x="45.2" width="14.1" height="134.4"/>
+      <rect class="st0" x="483.7" width="7" height="134.4"/>
+      <rect class="st0" x="180.7" width="35.2" height="134.4"/>
+      <rect class="st0" x="432.2" width="14.1" height="134.4"/>
+      <rect class="st0" x="225.8" width="42.2" height="134.4"/>
+      <rect class="st0" x="329" width="28.1" height="134.4"/>
+      <rect class="st0" width="7" height="134.4"/>
+      <rect class="st0" x="277.4" width="35.2" height="134.4"/>
+      <rect class="st0" x="135.5" width="28.1" height="134.4"/>
+      <rect class="st0" x="90.3" width="21.1" height="134.4"/>
+      <rect class="st0" x="380.6" width="21.1" height="134.4"/>
     </g>
   </g>
 </svg>

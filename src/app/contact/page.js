@@ -34,7 +34,7 @@ export default function Home() {
           <h1 className="contact-social-name">Email</h1>
           <h1 className="contact-arrow arrow">→</h1>
           <h1 className="contact-username">
-            <a className="contact-link"  href="mailto:a.gambarini.2001@gmail.com" target="_blank" rel="noopener noreferrer">a.gambarini.2001@gmail.com</a>
+            <a className="contact-link"  href="mailto:a.gambarini.2001@gmail.com" target="_blank" rel="noopener noreferrer">agambarini.info@gmail.com</a>
           </h1>
         </div>
       </div>

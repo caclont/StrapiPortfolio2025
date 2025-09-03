@@ -1,19 +1,29 @@
 .projects-loader-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 90dvh; /* occupe tout l'écran */
+  flex-direction: column; /* empile loader et texte verticalement */
+  justify-content: center; /* centre verticalement */
+  align-items: center; /* centre horizontalement */
+  width: 100%;
+  height: 90dvh; /* occupe presque tout l'écran */
   background-color: black; /* fond sombre */
+  text-align: center; /* centrer le texte */
+  gap: 1rem; /* espace entre loader et texte */
 }
 
 .projects-loader {
   width: 60px;
   height: 60px;
   border: 6px double rgba(255, 255, 255, 0.2);
-  border-top-color: white; /* couleur du “segment actif” */
+  border-top-color: white;
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
+
+.projects-loader-text {
+  font-size: 2rem;
+  color: white; /* pour que le texte soit visible */
+}
+
 
 @keyframes spin {
   to {
@@ -141,8 +151,5 @@
     filter: brightness(0.5);
     box-shadow: 10px 10px 15px rgba(255,255,255,0.2);
     transition: transform 0.1s ease;
-  }
-  projects-loader-container{
-    background-color: red;
   }
 }

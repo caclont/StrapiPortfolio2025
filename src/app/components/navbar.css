@@ -42,7 +42,7 @@
   left: 0;
   bottom: 3px;
   width: 0;
-  height: 0.1dvw;
+  height: 0.1rem;
   background-color: white;
   transition: width 0.5s ease;
 }
@@ -52,7 +52,7 @@
   right: 0px;
   bottom: 3px;
   width: 0;
-  height: 0.1dvw;
+  height: 0.1rem;
   background-color: white;
   transition: width 0.5s ease;
 }
@@ -62,7 +62,7 @@
   left: 50%;         /* centre horizontal */
   bottom: 3px;
   width: 0;
-  height: 0.1dvw;
+  height: 0.1rem;
   background-color: white;
   transform-origin: center;  /* origine du scale au centre */
   transform: translateX(-50%) scaleX(0); /* on centre la ligne et on la réduit à 0 */

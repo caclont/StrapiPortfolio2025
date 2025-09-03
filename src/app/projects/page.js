@@ -101,6 +101,7 @@ export default function Projects() {
     return (
       <div className="projects-loader-container">
         <div className="projects-loader"></div>
+       <div className="projects-loader-text"> Hang on ! My CMS seems to struggle...</div>
       </div>
     );
   }
