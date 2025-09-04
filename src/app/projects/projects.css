@@ -21,6 +21,7 @@
 
 .projects-loader-text {
   font-size: 1.5rem;
+  line-height: 1.4rem;
   color: white; /* pour que le texte soit visible */
 }
 

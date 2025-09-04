@@ -19,20 +19,6 @@
     box-sizing: border-box;
   }
 
-  .graphiqueMyLife {
-    position: fixed;
-    top: 20dvh;
-    right: -40dvw;
-    width: 100dvw;
-    height: 100dvh;
-    transform: scaleX(-100%);
-    background-image: url("../assets/graphik/mylife.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: bottom;
-    z-index: 10;
-    pointer-events: none;
-  }
 
   .mylife-years {
     grid-area: years;
