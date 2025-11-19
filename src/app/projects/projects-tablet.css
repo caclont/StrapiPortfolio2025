@@ -1,6 +1,11 @@
 @media screen and (min-width: 751px) and (max-width: 1024px) {
-
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* prend toute la hauteur */
+}
   .projects-table {
+    flex: 1;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -109,7 +114,66 @@
     box-shadow: 10px 10px 15px rgba(255,255,255,0.2);
     transition: transform 0.1s ease;
   }
-  projects-loader-container{
-    background-color: red;
+  .contact-bar{
+    height: fit-content;
+    width: 100%;
+    /* box-shadow: -5px 0px 200px rgba(255,255,255,0.5); */
+    /* border-top: 0.5px solid grey; */
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 2rem 2rem 0rem 0rem;
+    /* color: black; */
+    color: white;
+    display: flex;
+    flex-direction: row;
+    font-size: 1.2rem;
+    padding: 1rem;
+    font-family: 'HelveticaCustom', sans-serif !important;
+
+  }
+
+  /* Section du haut */
+  .contact-text-top {
+    width: 100%;
+    padding-right: 1rem;
+    /* flex: 1; */
+  }
+
+  /* Section du bas */
+  .contact-text-bottom {
+    width: 100%;
+
+  }
+
+  /* Ligne sociale */
+  .contact-social {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Colonnes gauche, centre, droite */
+  .contact-social-name {
+    flex: 1;
+    text-align: left;
+  }
+
+  .contact-arrow {
+    flex: 1;
+    text-align: center;
+    font-family: 'M PLUS 1p', sans-serif;
+  }
+
+  .contact-username {
+    flex: 1;
+    text-align: right;
+  }
+
+  /* Liens */
+  .contact-link {
+    text-decoration: none;
+  }
+
+  .contact-link:hover {
+    text-decoration: underline;
   }
 }

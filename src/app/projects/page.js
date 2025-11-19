@@ -45,7 +45,7 @@ export default function Projects() {
     if (!img) return;
 
     const sidePadding = 20;
-    const topPadding = (window.innerHeight * 0.1)+10;
+    const topPadding = 20;
     const bottomPadding = 20;
 
     const imgWidth = img.offsetWidth;
@@ -110,6 +110,7 @@ export default function Projects() {
   // Render
   // ----------------------------
   return (
+    <div className="page-wrapper">
     <div className="projects-table" ref={containerRef}>
       {projets.map((projet) => {
         const isVisible =
@@ -159,6 +160,52 @@ export default function Projects() {
           style={{ top: cursorPos.y, left: cursorPos.x }}
         />
       )}
+
+    </div>
+      <div className="contact-bar">
+        <div className="contact-text-top">
+          <div className="contact-social">
+            <h1 className="contact-social-name">Instagram</h1>
+            <h1 className="contact-arrow arrow">→</h1>
+            <h1 className="contact-username">
+              <a className="contact-link" href="https://www.instagram.com/caclont" target="_blank" rel="noopener noreferrer">@caclont</a>
+            </h1>
+          </div>
+
+          <div className="contact-social">
+            <h1 className="contact-social-name">Linkedin</h1>
+            <h1 className="contact-arrow arrow">→</h1>
+            <h1 className="contact-username">
+              <a className="contact-link" href="https://www.linkedin.com/in/alexandre-gambarini-93509b381/" target="_blank" rel="noopener noreferrer">@alexandregambarini</a>
+            </h1>
+          </div>
+
+          <div className="contact-social">
+            <h1 className="contact-social-name">Email</h1>
+            <h1 className="contact-arrow arrow">→</h1>
+            <h1 className="contact-username">
+              <a className="contact-link"  href="mailto:a.gambarini.2001@gmail.com" target="_blank" rel="noopener noreferrer">agambarini.info@gmail.com</a>
+            </h1>
+          </div>
+        </div>
+        <div className="contact-text-bottom">
+          <div className="contact-social">
+            <h1 className="contact-social-name">Commission</h1>
+            <h1 className="contact-arrow arrow">→</h1>
+            <h1 className="contact-username">
+              Open
+            </h1>
+          </div>
+
+          <div className="contact-social">
+            <h1 className="contact-social-name">Freelance</h1>
+            <h1 className="contact-arrow arrow">→</h1>
+            <h1 className="contact-username">
+              Open
+            </h1>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

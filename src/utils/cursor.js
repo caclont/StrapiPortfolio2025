@@ -18,13 +18,14 @@ export default function Cursor() {
     window.addEventListener('mousemove', onMouseMove);
 
     const isClickable = (target) => {
+      if (!target) return false;
+
       return (
         target.tagName === 'A' ||
         target.tagName === 'BUTTON' ||
         target.hasAttribute('onclick') ||
-        target.closest(
-          '.project-slug-images img, .mylife-images-grid img, .project-slug-images video, .mylife-images-grid video, .clickable-iframe-container'
-        )
+        target.closest('.clickable-text') || // ta classe perso
+        target.closest('.project-slug-images img, .mylife-images-grid img, .project-slug-images video, .mylife-images-grid video, .clickable-iframe-container')
       );
     };
 
