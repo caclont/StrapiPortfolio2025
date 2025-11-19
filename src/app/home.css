@@ -1,3 +1,10 @@
+@media screen and (max-width: 750px) {
+  .text {
+    rotate: -90deg;
+   font-size: 5vh!important;
+   padding: 1vw 3vh!important;
+  }
+}
 .home-container {
   position: fixed;
   top: 0;
@@ -40,6 +47,8 @@
 
 .backdrop {
   position: fixed;
+  top: 0px;
+  left: 0px;
   width: 100dvw;
   height: 100dvh;
   backdrop-filter: blur(10px);
